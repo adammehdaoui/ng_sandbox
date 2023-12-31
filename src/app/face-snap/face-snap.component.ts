@@ -13,15 +13,22 @@ import {NgOptimizedImage} from "@angular/common";
 export class FaceSnapComponent implements OnInit {
   title!: string;
   description!: string;
-  date!: Date;
+  createdDate!: Date;
   imageUrl!: string;
   snaps!: number;
+  snapped!: boolean;
 
   ngOnInit() {
     this.title = 'Kyoto';
     this.description = 'Paysage du Japon';
-    this.date = new Date();
+    this.createdDate = new Date();
     this.imageUrl = "assets/images/kyoto.jpeg"
     this.snaps = 5;
+    this.snapped = false;
+  }
+
+  onAddSnap() {
+    this.snapped ? this.snaps-- : this.snaps++;
+    this.snapped = !this.snapped;
   }
 }
