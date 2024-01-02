@@ -12,21 +12,18 @@ import { FaceSnap } from "./models/face-snap.model";
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  faceSnapKyoto!: FaceSnap
-  faceSnapTaiwan!: FaceSnap
-  faceSnapSingapore!: FaceSnap
+  faceSnaps!: FaceSnap[];
 
   ngOnInit() {
-    this.faceSnapKyoto = {
+    this.faceSnaps = [
+      {
       title: 'Kyoto',
       description: 'Paysage du Japon',
       createdDate: new Date(),
       imageUrl: 'assets/images/kyoto.jpeg',
       snaps: 5,
       snapped: false
-    }
-
-    this.faceSnapTaiwan = {
+    }, {
       title: 'Taiwan',
       description: 'Paysage de Taiwan',
       createdDate: new Date(),
@@ -34,15 +31,13 @@ export class AppComponent implements OnInit {
       snaps: 23,
       snapped: false,
       location: 'Centre-ville de Taiwan'
-    };
-
-    this.faceSnapSingapore = {
+    }, {
       title: 'Singapour',
       description: 'Paysage de Singapour',
       createdDate: new Date(),
       imageUrl: 'assets/images/singapore.jpeg',
       snaps: 2,
       snapped: false
-    };
+    }]
   }
 }
