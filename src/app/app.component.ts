@@ -17,28 +17,32 @@ export class AppComponent implements OnInit {
   faceSnapSingapore!: FaceSnap
 
   ngOnInit() {
-    this.faceSnapKyoto = new FaceSnap(
-      'Kyoto',
-      'Paysage du Japon',
-      new Date(),
-      'assets/images/kyoto.jpeg',
-      5,
-      false);
+    this.faceSnapKyoto = {
+      title: 'Kyoto',
+      description: 'Paysage du Japon',
+      createdDate: new Date(),
+      imageUrl: 'assets/images/kyoto.jpeg',
+      snaps: 5,
+      snapped: false
+    }
 
-    this.faceSnapTaiwan = new FaceSnap(
-      'Taiwan',
-      'Paysage de Taiwan',
-      new Date(),
-      'assets/images/taiwan.jpeg',
-      23,
-      false);
+    this.faceSnapTaiwan = {
+      title: 'Taiwan',
+      description: 'Paysage de Taiwan',
+      createdDate: new Date(),
+      imageUrl: 'assets/images/taiwan.jpeg',
+      snaps: 23,
+      snapped: false,
+      location: 'Centre-ville de Taiwan'
+    };
 
-    this.faceSnapSingapore = new FaceSnap(
-      'Kyoto',
-      'Paysage de Singapour',
-      new Date(),
-      'assets/images/singapore.jpeg',
-      2,
-      false);
+    this.faceSnapSingapore = {
+      title: 'Singapour',
+      description: 'Paysage de Singapour',
+      createdDate: new Date(),
+      imageUrl: 'assets/images/singapore.jpeg',
+      snaps: 2,
+      snapped: false
+    };
   }
 }

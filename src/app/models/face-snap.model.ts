@@ -16,11 +16,22 @@ export class FaceSnap {
     this.snaps = snaps;
     this.snapped = snapped; **/
 
-  constructor(public title: string,
+  /**
+   NEW SYNTAX WITH PUBLIC CONSTRUCTOR
+   constructor(public title: string,
               public description: string,
               public createdDate: Date,
               public imageUrl: string,
               public snaps: number,
-              public snapped: boolean) {
-  }
+              public snapped: boolean,
+              public location?: string) {
+  } **/
+
+  title!: string;
+  description!: string;
+  createdDate!: Date;
+  imageUrl!: string;
+  snaps!: number;
+  snapped!: boolean;
+  location?: string;
 }
