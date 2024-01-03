@@ -21,14 +21,14 @@ export class AppComponent implements OnInit {
       description: 'Paysage du Japon',
       createdDate: new Date(),
       imageUrl: 'assets/images/kyoto.jpeg',
-      snaps: 5,
+      snaps: 160,
       snapped: false
     }, {
       title: 'Taiwan',
       description: 'Paysage de Taiwan',
       createdDate: new Date(),
       imageUrl: 'assets/images/taiwan.jpeg',
-      snaps: 23,
+      snaps: 100,
       snapped: false,
       location: 'Centre-ville de Taiwan'
     }, {
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
       description: 'Paysage de Singapour',
       createdDate: new Date(),
       imageUrl: 'assets/images/singapore.jpeg',
-      snaps: 2,
+      snaps: 20,
       snapped: false
     }]
   }
