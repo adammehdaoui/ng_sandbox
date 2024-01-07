@@ -1,13 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, LOCALE_ID } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FaceSnapComponent } from "./face-snap/face-snap.component";
 import { FaceSnap } from "./models/face-snap.model";
+import * as fr from '@angular/common/locales/fr';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, FaceSnapComponent],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR'}],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -15,6 +17,8 @@ export class AppComponent implements OnInit {
   faceSnaps!: FaceSnap[];
 
   ngOnInit() {
+    registerLocaleData(fr.default);
+
     this.faceSnaps = [
       {
       title: 'Kyoto',
