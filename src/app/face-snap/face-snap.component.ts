@@ -1,13 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from "@angular/common";
-import {FaceSnap} from "../models/face-snap.model";
+import { FaceSnap } from "../models/face-snap.model";
 
 @Component({
   selector: 'app-face-snap',
   standalone: true,
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss'
 })
