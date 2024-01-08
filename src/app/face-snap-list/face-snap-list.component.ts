@@ -3,6 +3,7 @@ import { FaceSnap } from "../models/face-snap.model";
 import { CommonModule, registerLocaleData } from "@angular/common";
 import * as fr from '@angular/common/locales/fr';
 import { FaceSnapComponent } from "../face-snap/face-snap.component";
+import { FaceSnapsService } from "../services/face-snaps.service";
 
 @Component({
   selector: 'app-face-snap-list',
@@ -15,32 +16,11 @@ import { FaceSnapComponent } from "../face-snap/face-snap.component";
 export class FaceSnapListComponent implements OnInit {
   faceSnaps!: FaceSnap[];
 
+  constructor(private faceSnapsService: FaceSnapsService) {
+  }
+
   ngOnInit() {
     registerLocaleData(fr.default);
-
-    this.faceSnaps = [
-      {
-        title: 'Kyoto',
-        description: 'Paysage du Japon',
-        createdDate: new Date(),
-        imageUrl: 'assets/images/kyoto.jpeg',
-        snaps: 160,
-        snapped: false
-      }, {
-        title: 'Taiwan',
-        description: 'Paysage de Taiwan',
-        createdDate: new Date(),
-        imageUrl: 'assets/images/taiwan.jpeg',
-        snaps: 100,
-        snapped: false,
-        location: 'Centre-ville de Taiwan'
-      }, {
-        title: 'Singapour',
-        description: 'Paysage de Singapour',
-        createdDate: new Date(),
-        imageUrl: 'assets/images/singapore.jpeg',
-        snaps: 20,
-        snapped: false
-      }]
+    this.faceSnaps = this.faceSnapsService.faceSnaps;
   }
 }

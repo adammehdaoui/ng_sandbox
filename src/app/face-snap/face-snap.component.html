@@ -1,5 +1,5 @@
 <div class="face-snap-card" [ngClass]="{'snapped': faceSnap.snapped}">
-  <p>{{ faceSnap.description }}</p>
+  <h2>{{ faceSnap.description }}</h2>
   <p>Mise en ligne le {{ faceSnap.createdDate | date: 'longDate' }}</p>
   <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
