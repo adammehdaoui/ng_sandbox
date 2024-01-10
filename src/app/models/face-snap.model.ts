@@ -27,6 +27,7 @@ export class FaceSnap {
               public location?: string) {
   } **/
 
+  id!: number;
   title!: string;
   description!: string;
   createdDate!: Date;
