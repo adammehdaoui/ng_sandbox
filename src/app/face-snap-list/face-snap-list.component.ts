@@ -16,8 +16,7 @@ import { FaceSnapsService } from "../services/face-snaps.service";
 export class FaceSnapListComponent implements OnInit {
   faceSnaps!: FaceSnap[];
 
-  constructor(private faceSnapsService: FaceSnapsService) {
-  }
+  constructor(private faceSnapsService: FaceSnapsService) {}
 
   ngOnInit() {
     registerLocaleData(fr.default);

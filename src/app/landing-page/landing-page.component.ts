@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   onContinue(): void {
     this.router.navigateByUrl('facesnaps').then(r => r ? console.log('navigation ok') : console.log('navigation ko'));

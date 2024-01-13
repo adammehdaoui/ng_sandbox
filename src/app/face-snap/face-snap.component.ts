@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { FaceSnap } from "../models/face-snap.model";
 import { FaceSnapsService } from "../services/face-snaps.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-face-snap',
@@ -13,16 +14,12 @@ import { FaceSnapsService } from "../services/face-snaps.service";
 export class FaceSnapComponent {
   @Input() faceSnap!: FaceSnap;
 
-  constructor(private faceSnapsService: FaceSnapsService) {
-  }
+  constructor(private faceSnapsService: FaceSnapsService, private router: Router) {}
 
-  onSnap() {
-    /** this.faceSnap.snapped ? this.faceSnap.snaps-- : this.faceSnap.snaps++; **/
-
-    this.faceSnap.snapped
-      ? this.faceSnapsService.snapById(this.faceSnap.id, "unsnap")
-      : this.faceSnapsService.snapById(this.faceSnap.id, "snap");
-
-    this.faceSnap.snapped = !this.faceSnap.snapped;
+  onViewFaceSnap(): void {
+    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`).then(r  => {
+        console.log(r ? console.log('navigation ok') : console.log('navigation ko'));
+      }
+    );
   }
 }
